@@ -1,0 +1,24 @@
+# useReducer hook মূলত ২টি argument accept করে যার প্রথমটা হচ্ছে reducer এবং দ্বিতীয়টা হচ্ছে initial state value.
+
+# useReducer function-টা ২টি element এর array return করে। একটি হলো state এবং অন্যটি dispatch. এক্ষেত্রে dispatch হলো state updater function এবং reducer হলো অন্য একটি function যেখানে state update করার logic থাকে।
+
+# reducer function-টা state এবং action-কে parameter হিসেবে নেয় যেখানে state হচ্ছে আমাদের initial state এবং action হচ্ছে একটি object যার ২টি property, type(required)  এবং payload (optional)। dispatch() function call এর সময় আমরা object এর ভেতর এই দুইটা property এর value pass করে থাকি।
+
+# dispatch() function এর argument == reducer() function এর action parameter
+
+# useReducer best practices
+    # The reducer should throw an error for unknown action types. So your default reducer case should be throwing an error.
+
+# [NOTE] : A common useReducer usage is to handle forms.
+
+# [NOTE] : If we have the same logic in all / most of our cases, then we can simplify those by using a single case via computed keys.
+
+# [NOTE] : Stick to the conventional action structure. Unless you are so much comfortable with useReducer, you can use action object in redux way where the action object will have type and payload property only.
+
+# [NOTE] : Sugar syntax: deconstruct type and payload from action. Also destructure the state if it is small enough.
+
+# We can optionally pass a third argument to useReducer which will help us to lazily initialize our state. This is rarely used.
+
+# We can use useReducer instead of useReducer in below cases :
+    # States rely on each other.
+    # Complex state or state object having large number of properties.
